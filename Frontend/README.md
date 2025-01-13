@@ -34,8 +34,8 @@ The **Food Delivery System** is a full-stack web application designed to simulat
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/food-delivery-backend.git
-   cd food-delivery-backend
+   git clone https://github.com/harishgowda120/full-stack-task-management-app.git
+   cd backend
    ```
 
 2. **Install Dependencies**
@@ -60,7 +60,7 @@ The **Food Delivery System** is a full-stack web application designed to simulat
 
 1. **Navigate to Frontend Folder**
    ```bash
-   cd ../food-delivery-frontend
+   cd frontend
    ```
 
 2. **Install Dependencies**
