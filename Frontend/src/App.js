@@ -16,6 +16,7 @@ const App = () => {
     <AppProvider> {/* Wrap your app in the AppProvider */}
       <Router>
         <Navbar />
+        <MenuPage />
         <Routes>
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/AddMenu" element={<AddMenu />} />
