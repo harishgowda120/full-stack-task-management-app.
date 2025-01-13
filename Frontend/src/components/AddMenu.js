@@ -17,7 +17,7 @@ const AddMenu = () => {
     setSuccessMessage('');
 
     try {
-       await axios.post('http://localhost:5000/api/menu/', {
+       await axios.post('https://full-stack-task-management-app-2-bw9j.onrender.com/api/menu/', {
         name,
         category,
         price,
