@@ -12,7 +12,8 @@ const Menu = () => {
     // Fetch menu items from the backend API
     const fetchMenuItems = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/menu/');
+        
+        const response = await axios.get('https://full-stack-task-management-app-2-bw9j.onrender.com/api/menu/');
         updateMenuItems(response.data); // Update the menu items in global state
       } catch (error) {
         console.error('Error fetching menu items', error);
