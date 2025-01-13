@@ -22,7 +22,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', { username, password });
+      const response = await axios.post('https://full-stack-task-management-app-2-bw9j.onrender.com/api/auth/register', { username, password });
       // const { Username, userId } = response.data;  // Destructure username and userId
       
       // Store the token and user in local storage and context
