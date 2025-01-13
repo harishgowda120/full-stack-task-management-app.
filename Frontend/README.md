@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Food Delivery System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+The **Food Delivery System** is a full-stack web application designed to simulate a real-world food delivery service. It allows users to browse menu items, add them to a cart, place orders, and track their order history. The system features user authentication, menu management, and order processing with a responsive user interface.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend (Node.js, Express, MongoDB)
+- **User Authentication**: Secure registration and login with JWT-based authentication.
+- **Menu Management**: CRUD operations for menu items (Create, Read, Update, Delete).
+- **Order Management**: Place orders, calculate total amounts, and view order history.
+- **Data Validation & Error Handling**: Robust error handling and input validation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend (React.js)
+- **Login Page**: Secure user authentication with JWT.
+- **Menu Page**: Display menu items with options to add, edit, or delete items.
+- **Cart Component**: Add menu items to a cart with customizable quantities.
+- **Order Page**: Review cart items, place orders, and view order history.
+- **State Management**: Implemented using React Context API.
+- **Responsive UI**: Designed with Material-UI for mobile and desktop views.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Instructions
 
-### `npm run build`
+### Prerequisites
+- Node.js and npm installed
+- MongoDB Atlas account or local MongoDB instance
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/food-delivery-backend.git
+   cd food-delivery-backend
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. **Configure Environment Variables**
+   Create a `.env` file in the root directory:
+   ```env
+   PORT=5000
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Start the Server**
+   ```bash
+   npm run dev
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Frontend Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Navigate to Frontend Folder**
+   ```bash
+   cd ../food-delivery-frontend
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Run the React App**
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+### Backend Deployment
+- **Platform**: Heroku/Render/Railway
+- **Command**:
+  ```bash
+  git push heroku main
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Frontend Deployment
+- **Platform**: Vercel/Netlify
+- **Command**:
+  ```bash
+  vercel deploy
+  ```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Assumptions
+- All users are required to register before placing orders.
+- Only authenticated users can access menu and order features.
+- Admin rights are required for menu management (Add/Edit/Delete).
 
-### Making a Progressive Web App
+## Challenges
+- Implementing secure user authentication with JWT.
+- Managing state across components using Context API.
+- Ensuring smooth integration between frontend and backend APIs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Limitations
+- No payment gateway integration.
+- No role-based access control for admin and regular users.
+- Limited scalability without advanced caching or load balancing.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact
+For any questions or feedback, please contact:
 
-### Deployment
+**Developer:** Harish Gowda N  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
