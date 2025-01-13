@@ -14,7 +14,7 @@ const Cart = () => {
       const fetchOrders = async () => {
         try {
           // Send the Authorization token in headers and userId in the URL
-          const response = await axios.get(`http://localhost:5000/api/order/orders/${user.userId}`, {
+          const response = await axios.get(`https://full-stack-task-management-app-2-bw9j.onrender.com/api/order/orders/${user.userId}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`, // Pass the token in headers
             },
