@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// import { useAppContext } from '../context/AppContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  // const { loginUser } = useAppContext();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -15,28 +13,40 @@ const Register = () => {
     e.preventDefault();
     setErrorMessage(''); // Reset error message before making the request
 
-    // Check if passwords match
+    // Validate form fields
+    if (!username || !password || !confirmPassword) {
+      setErrorMessage('All fields are required');
+      return;
+    }
+
     if (password !== confirmPassword) {
       setErrorMessage("Passwords don't match");
       return;
     }
 
+    // Optional: You could add more validation here (e.g., password strength, valid username)
+
     try {
-      const response = await axios.post('https://full-stack-task-management-app-2-bw9j.onrender.com/api/auth/register', { username, password });
-      // const { Username, userId } = response.data;  // Destructure username and userId
-      
-      // Store the token and user in local storage and context
-       // Store the user data (username and userId) in localStorage and context
-      //  localStorage.setItem('username', Username);
-      //  localStorage.setItem('userId', userId);
+      const response = await axios.post(
+        'https://full-stack-task-management-app-2-bw9j.onrender.com/api/auth/register',
+        { username, password }
+      );
 
-      //  loginUser({ Username, userId });
+      // Optionally store the token and user data in localStorage or context
+      // localStorage.setItem('token', response.data.token); // Example for saving token
 
-      // Redirect to the menu page
+      // Redirect to login page after successful registration
       navigate('/login');
     } catch (error) {
-      setErrorMessage('Error creating account. Please try again.');
-      console.error("Error registering:", error);
+      // Check the backend's response for error details
+      if (error.response) {
+        // Backend returned a response, check the data for the error message
+        setErrorMessage(error.response.data.message || 'Error creating account. Please try again.');
+      } else {
+        // Handle network or other Axios-related errors
+        setErrorMessage('Network error. Please try again later.');
+      }
+      console.error('Error registering:', error);
     }
   };
 
@@ -47,7 +57,7 @@ const Register = () => {
           <div className="card shadow-lg border-0 rounded-4">
             <div className="card-body p-5">
               <h2 className="text-center mb-4">Register</h2>
-              
+
               {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
 
               <form onSubmit={handleRegister}>
