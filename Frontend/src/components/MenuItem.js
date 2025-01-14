@@ -1,5 +1,5 @@
 import React from 'react';
-import img from './image.png'
+import img from './image.png';
 
 const MenuItem = ({ item, addToCart }) => {
   return (
@@ -7,8 +7,10 @@ const MenuItem = ({ item, addToCart }) => {
       <div
         className="card shadow-lg border-0 rounded-4"
         style={{
-          width: '18rem',
+          width: '100%', // Full width for responsiveness
+          maxWidth: '300px', // Max width of the card
           transition: 'transform 0.3s ease-in-out', // Smooth hover effect
+          margin: '0 auto', // Center the card on smaller screens
         }}
       >
         <img
@@ -23,12 +25,22 @@ const MenuItem = ({ item, addToCart }) => {
           }}
         />
         <div className="card-body">
-          <h5 className="card-title text-center" style={{ color: '#2c3e50', fontWeight: 'bold' }}>
+          <h5
+            className="card-title text-center"
+            style={{
+              color: '#2c3e50',
+              fontWeight: 'bold',
+              fontSize: '1.2rem',
+            }}
+          >
             {item.name}
           </h5>
           <p
             className="card-text text-center text-success fs-5"
-            style={{ fontSize: '1.1rem', fontWeight: '500' }}
+            style={{
+              fontSize: '1.1rem',
+              fontWeight: '500',
+            }}
           >
             ${item.price.toFixed(2)}
           </p>
