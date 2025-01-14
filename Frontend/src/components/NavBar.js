@@ -34,7 +34,7 @@ const NavBar = () => {
           <ul className="navbar-nav ms-auto">
             {/* Menu Link */}
             <li className="nav-item">
-              <Link className="nav-link fs-5 text-white hover-underline-animation" to="/menu">
+              <Link className="nav-link fs-5 text-white hover-underline-animation" to="/">
                 Menu
               </Link>
             </li>
