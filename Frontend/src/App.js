@@ -5,11 +5,8 @@ import Navbar from './components/NavBar';
 import LoginPage from './components/Login';
 import MenuPage from './components/Menu';
 import AddMenu from './components/AddMenu';
-
 import Cart from './components/Cart';
 import Register from './components/Register';
-
-
 
 const App = () => {
   return (
@@ -17,13 +14,14 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/" element={<MenuPage />} /> {/* Default route showing the menu */}
           <Route path="/AddMenu" element={<AddMenu />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Add other routes here */}
+          {/* Catch-all route to show MenuPage if no other route matches */}
+          <Route path="*" element={<MenuPage />} />
         </Routes>
       </Router>
     </AppProvider>
