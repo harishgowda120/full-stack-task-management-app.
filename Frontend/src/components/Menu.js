@@ -44,7 +44,7 @@ const Menu = () => {
   const placeOrder = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/order/placeorder',
+        'https://full-stack-task-management-app-2-bw9j.onrender.com/api/order/placeorder',
         {
           userId:user.userId, // Use the userId for the order
           items: cart.map((cartItem) => ({
